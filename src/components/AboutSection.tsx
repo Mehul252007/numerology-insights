@@ -16,18 +16,12 @@ const AboutSection = () => {
           >
             <div className="relative">
               <div className="card-cosmic rounded-3xl p-8 lg:p-12">
-                <div className="aspect-square max-w-sm mx-auto rounded-2xl bg-gradient-to-br from-primary/20 to-cosmic-light/10 flex items-center justify-center relative overflow-hidden">
-                  {/* Decorative elements */}
-                  <div className="absolute inset-0 bg-gradient-radial from-cosmic-glow/20 to-transparent" />
-                  <div className="relative z-10 text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center">
-                      <Star className="w-12 h-12 text-background" fill="currentColor" />
-                    </div>
-                    <h3 className="font-display text-2xl font-bold text-foreground mb-2">
-                      Master Numerologist
-                    </h3>
-                    <p className="text-lavender">15+ Years Experience</p>
-                  </div>
+                <div className="aspect-square max-w-sm mx-auto rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="/baba.png" 
+                    alt="Master Numerologist" 
+                    className="w-full h-full object-cover" 
+                  />
                 </div>
               </div>
               
