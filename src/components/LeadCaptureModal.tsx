@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, Lock, Palette, Check, Loader2 } from "lucide-react";
+import { X, Sparkles, Lock, Check, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -26,18 +26,8 @@ const LeadCaptureModal = ({ isOpen, onClose }: LeadCaptureModalProps) => {
     email: "",
   });
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
-  const [generatedColor, setGeneratedColor] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const generatePurpleColor = useCallback(() => {
-    // Generate random dark purple variations
-    const hue = 260 + Math.random() * 40; // 260-300 for purple range
-    const saturation = 40 + Math.random() * 30; // 40-70%
-    const lightness = 20 + Math.random() * 25; // 20-45%
-    const color = `hsl(${Math.round(hue)}, ${Math.round(saturation)}%, ${Math.round(lightness)}%)`;
-    setGeneratedColor(color);
-  }, []);
 
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -71,7 +61,6 @@ const LeadCaptureModal = ({ isOpen, onClose }: LeadCaptureModalProps) => {
     const fullData = {
       ...formData,
       why: "Requested Free Numerology Report to gain clarity on life purpose",
-      colorCode: generatedColor || "Not generated",
       timestamp: new Date().toISOString(),
     };
     
@@ -87,7 +76,7 @@ const LeadCaptureModal = ({ isOpen, onClose }: LeadCaptureModalProps) => {
     setTimeout(() => {
       setFormData({ name: "", phone: "", email: "" });
       setErrors({});
-      setGeneratedColor(null);
+
       setIsSubmitted(false);
     }, 300);
   };
@@ -107,13 +96,13 @@ const LeadCaptureModal = ({ isOpen, onClose }: LeadCaptureModalProps) => {
 
           {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-lg z-50"
+            className="fixed inset-0 flex items-center justify-center z-50 p-4"
           >
-            <div className="card-cosmic rounded-3xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <div className="card-cosmic rounded-3xl p-6 sm:p-8 relative max-h-[90vh] w-full max-w-lg overflow-y-auto">
               {/* Close button */}
               <button
                 onClick={handleClose}
@@ -214,34 +203,6 @@ const LeadCaptureModal = ({ isOpen, onClose }: LeadCaptureModalProps) => {
                       />
                       {errors.email && (
                         <p className="text-sm text-destructive">{errors.email}</p>
-                      )}
-                    </div>
-
-                    {/* Color Generator */}
-                    <div className="space-y-2">
-                      <Label className="text-foreground">Your Cosmic Color</Label>
-                      <div className="flex gap-3">
-                        <Button
-                          type="button"
-                          variant="outline"
-                          onClick={generatePurpleColor}
-                          className="flex-1 border-border hover:bg-secondary"
-                        >
-                          <Palette className="w-4 h-4 mr-2" />
-                          Generate Color
-                        </Button>
-                        {generatedColor && (
-                          <div
-                            className="w-12 h-10 rounded-lg border border-border flex-shrink-0"
-                            style={{ backgroundColor: generatedColor }}
-                            title={generatedColor}
-                          />
-                        )}
-                      </div>
-                      {generatedColor && (
-                        <p className="text-xs text-muted-foreground font-mono">
-                          {generatedColor}
-                        </p>
                       )}
                     </div>
 

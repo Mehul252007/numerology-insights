@@ -152,7 +152,7 @@
   }
 
   .text-gradient-purple {
-    background: linear-gradient(135deg, hsl(var(--cosmic-glow)) 0%, hsl(var(--lavender)) 100%);
+    background: linear-gradient(to right, hsl(270 60% 40%) 0%, hsl(var(--cosmic-glow)) 33%, hsl(var(--lavender)) 66%, hsl(280 50% 60%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

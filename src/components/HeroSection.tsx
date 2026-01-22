@@ -18,15 +18,24 @@ const HeroSection = ({ onOpenModal }: HeroSectionProps) => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left z-10"
           >
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-foreground">Unlock the</span>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-purple-600/20 border border-purple-500/30 rounded-full px-4 py-2 mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span className="text-white font-medium text-sm">100% Free Personalized Report</span>
+            </div>
+            
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight text-white">
+              <span>Unlock the</span>
               <br />
               <span className="text-gradient-purple">Hidden Power</span>
               <br />
-              <span className="text-foreground">of Your Numbers</span>
+              <span>of Your Numbers</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-lavender mb-4">
+            <p className="text-lg sm:text-xl text-white mb-4">
               Get Your FREE Personalized Numerology Report
             </p>
             
