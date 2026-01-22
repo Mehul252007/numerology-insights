@@ -2,95 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Numerology Cosmic Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Primary cosmic purple palette */
+    --background: 270 50% 6%;
+    --foreground: 270 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 270 45% 10%;
+    --card-foreground: 270 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 270 50% 8%;
+    --popover-foreground: 270 20% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep mystical purple */
+    --primary: 270 60% 50%;
+    --primary-foreground: 270 20% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Cosmic accent - lavender glow */
+    --secondary: 280 40% 20%;
+    --secondary-foreground: 270 20% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 270 30% 15%;
+    --muted-foreground: 270 15% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Gold accent for premium feel */
+    --accent: 45 80% 55%;
+    --accent-foreground: 270 50% 6%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 270 30% 20%;
+    --input: 270 30% 15%;
+    --ring: 270 60% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom cosmic colors */
+    --cosmic-dark: 270 55% 4%;
+    --cosmic-purple: 270 50% 12%;
+    --cosmic-mid: 270 45% 25%;
+    --cosmic-light: 280 40% 45%;
+    --cosmic-glow: 275 80% 60%;
+    --star-white: 0 0% 100%;
+    --gold: 45 80% 55%;
+    --gold-light: 45 85% 70%;
+    --lavender: 270 50% 75%;
+    --lavender-light: 275 60% 85%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(270 55% 4%) 0%, hsl(270 50% 12%) 50%, hsl(280 45% 15%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(270 55% 8%) 0%, hsl(270 50% 5%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(270 45% 12% / 0.8) 0%, hsl(270 40% 8% / 0.6) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(270 60% 50%) 0%, hsl(280 50% 40%) 100%);
+    --gradient-button-hover: linear-gradient(135deg, hsl(270 65% 55%) 0%, hsl(280 55% 45%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 80% 55%) 0%, hsl(40 70% 45%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(275 80% 60% / 0.3);
+    --shadow-card: 0 8px 32px hsl(270 50% 5% / 0.5);
+    --shadow-button: 0 4px 20px hsl(270 60% 50% / 0.4);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 270 50% 8%;
+    --sidebar-foreground: 270 20% 95%;
+    --sidebar-primary: 270 60% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 40% 15%;
+    --sidebar-accent-foreground: 270 20% 95%;
+    --sidebar-border: 270 30% 20%;
+    --sidebar-ring: 270 60% 50%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    /* Dark mode uses same cosmic theme */
+    --background: 270 50% 6%;
+    --foreground: 270 20% 95%;
+    --card: 270 45% 10%;
+    --card-foreground: 270 20% 95%;
+    --popover: 270 50% 8%;
+    --popover-foreground: 270 20% 95%;
+    --primary: 270 60% 50%;
+    --primary-foreground: 270 20% 98%;
+    --secondary: 280 40% 20%;
+    --secondary-foreground: 270 20% 95%;
+    --muted: 270 30% 15%;
+    --muted-foreground: 270 15% 60%;
+    --accent: 45 80% 55%;
+    --accent-foreground: 270 50% 6%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 30% 20%;
+    --input: 270 30% 15%;
+    --ring: 270 60% 50%;
+    --sidebar-background: 270 50% 8%;
+    --sidebar-foreground: 270 20% 95%;
+    --sidebar-primary: 270 60% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 270 40% 15%;
+    --sidebar-accent-foreground: 270 20% 95%;
+    --sidebar-border: 270 30% 20%;
+    --sidebar-ring: 270 60% 50%;
   }
 }
 
@@ -100,6 +113,126 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    background: var(--gradient-cosmic);
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .cosmic-bg {
+    background: var(--gradient-cosmic);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    background: var(--gradient-hero);
+  }
+
+  .card-cosmic {
+    background: var(--gradient-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, hsl(var(--cosmic-glow)) 0%, hsl(var(--lavender)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Star animations */
+  .star {
+    position: absolute;
+    background: hsl(var(--star-white));
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  .star-small {
+    width: 2px;
+    height: 2px;
+  }
+
+  .star-medium {
+    width: 3px;
+    height: 3px;
+  }
+
+  .star-large {
+    width: 4px;
+    height: 4px;
+    box-shadow: 0 0 6px hsl(var(--star-white));
+  }
+
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(275 80% 60% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(275 80% 60% / 0.5);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  /* Sticky mobile CTA */
+  .sticky-cta {
+    @apply fixed bottom-0 left-0 right-0 p-4 z-50 md:hidden;
+    background: linear-gradient(180deg, transparent 0%, hsl(270 55% 4% / 0.95) 20%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(16px);
+    background: hsl(var(--cosmic-purple) / 0.6);
   }
 }
